@@ -2,9 +2,9 @@
  */
 package edu.toronto.cs.se.nlsfung.gsn.impl;
 
-import edu.toronto.cs.se.nlsfung.gsn.ASIL;
-import edu.toronto.cs.se.nlsfung.gsn.ASILLevel;
 import edu.toronto.cs.se.nlsfung.gsn.GSNPackage;
+import edu.toronto.cs.se.nlsfung.gsn.Justification;
+import edu.toronto.cs.se.nlsfung.gsn.ValidityState;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,44 +14,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ASIL</b></em>'.
+ * An implementation of the model object '<em><b>Justification</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.ASILImpl#getLevel <em>Level</em>}</li>
+ *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.JustificationImpl#getState <em>State</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ASILImpl extends ContextImpl implements ASIL {
+public class JustificationImpl extends ContextualElementImpl implements Justification {
 	/**
-	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLevel()
+	 * @see #getState()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ASILLevel LEVEL_EDEFAULT = ASILLevel.D;
+	protected static final ValidityState STATE_EDEFAULT = ValidityState.INVALID;
 
 	/**
-	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLevel()
+	 * @see #getState()
 	 * @generated
 	 * @ordered
 	 */
-	protected ASILLevel level = LEVEL_EDEFAULT;
+	protected ValidityState state = STATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ASILImpl() {
+	protected JustificationImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return GSNPackage.Literals.ASIL;
+		return GSNPackage.Literals.JUSTIFICATION;
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ASILLevel getLevel() {
-		return level;
+	public ValidityState getState() {
+		return state;
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLevel(ASILLevel newLevel) {
-		ASILLevel oldLevel = level;
-		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
+	public void setState(ValidityState newState) {
+		ValidityState oldState = state;
+		state = newState == null ? STATE_EDEFAULT : newState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GSNPackage.ASIL__LEVEL, oldLevel, level));
+			eNotify(new ENotificationImpl(this, Notification.SET, GSNPackage.JUSTIFICATION__STATE, oldState, state));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GSNPackage.ASIL__LEVEL:
-				return getLevel();
+			case GSNPackage.JUSTIFICATION__STATE:
+				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +108,8 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GSNPackage.ASIL__LEVEL:
-				setLevel((ASILLevel)newValue);
+			case GSNPackage.JUSTIFICATION__STATE:
+				setState((ValidityState)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GSNPackage.ASIL__LEVEL:
-				setLevel(LEVEL_EDEFAULT);
+			case GSNPackage.JUSTIFICATION__STATE:
+				setState(STATE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class ASILImpl extends ContextImpl implements ASIL {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GSNPackage.ASIL__LEVEL:
-				return level != LEVEL_EDEFAULT;
+			case GSNPackage.JUSTIFICATION__STATE:
+				return state != STATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,10 +154,10 @@ public class ASILImpl extends ContextImpl implements ASIL {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (level: ");
-		result.append(level);
+		result.append(" (state: ");
+		result.append(state);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ASILImpl
+} //JustificationImpl

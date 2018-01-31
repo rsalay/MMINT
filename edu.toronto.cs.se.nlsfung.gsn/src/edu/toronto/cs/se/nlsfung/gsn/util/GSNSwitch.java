@@ -146,12 +146,11 @@ public class GSNSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GSNPackage.ASIL: {
-				ASIL asil = (ASIL)theEObject;
-				T result = caseASIL(asil);
-				if (result == null) result = caseContext(asil);
-				if (result == null) result = caseContextualElement(asil);
-				if (result == null) result = caseArgumentElement(asil);
+			case GSNPackage.JUSTIFICATION: {
+				Justification justification = (Justification)theEObject;
+				T result = caseJustification(justification);
+				if (result == null) result = caseContextualElement(justification);
+				if (result == null) result = caseArgumentElement(justification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -325,17 +324,17 @@ public class GSNSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ASIL</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Justification</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ASIL</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Justification</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseASIL(ASIL object) {
+	public T caseJustification(Justification object) {
 		return null;
 	}
 

@@ -112,8 +112,8 @@ public class GSNAdapterFactory extends AdapterFactoryImpl {
 				return createContextAdapter();
 			}
 			@Override
-			public Adapter caseASIL(ASIL object) {
-				return createASILAdapter();
+			public Adapter caseJustification(Justification object) {
+				return createJustificationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -290,16 +290,16 @@ public class GSNAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.toronto.cs.se.nlsfung.gsn.ASIL <em>ASIL</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.toronto.cs.se.nlsfung.gsn.Justification <em>Justification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
+	 * @see edu.toronto.cs.se.nlsfung.gsn.Justification
 	 * @generated
 	 */
-	public Adapter createASILAdapter() {
+	public Adapter createJustificationAdapter() {
 		return null;
 	}
 

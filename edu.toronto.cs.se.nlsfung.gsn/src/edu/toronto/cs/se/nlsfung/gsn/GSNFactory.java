@@ -85,13 +85,13 @@ public interface GSNFactory extends EFactory {
 	Context createContext();
 
 	/**
-	 * Returns a new object of class '<em>ASIL</em>'.
+	 * Returns a new object of class '<em>Justification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ASIL</em>'.
+	 * @return a new object of class '<em>Justification</em>'.
 	 * @generated
 	 */
-	ASIL createASIL();
+	Justification createJustification();
 
 	/**
 	 * Returns the package supported by this factory.

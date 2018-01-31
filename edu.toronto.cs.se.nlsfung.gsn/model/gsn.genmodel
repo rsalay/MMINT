@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.toronto.cs.se.nlsfung.gsn/src" modelPluginID="edu.toronto.cs.se.nlsfung.gsn"
     modelName="edu.toronto.cs.se.nlsfung.gsn" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    language="" operationReflection="true" importOrganizing="true">
   <foreignModel>gsn.ecore</foreignModel>
   <genPackages prefix="GSN" basePackage="edu.toronto.cs.se.nlsfung" disposableProviderFactory="true"
       ecorePackage="gsn.ecore#/">
@@ -11,19 +11,20 @@
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//TruthState/False"/>
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//TruthState/True"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gsn.ecore#//ASILLevel">
-      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASILLevel/D"/>
-      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASILLevel/C"/>
-      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASILLevel/B"/>
-      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASILLevel/A"/>
-      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASILLevel/QM"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gsn.ecore#//ASIL">
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASIL/Unassigned"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASIL/D"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASIL/C"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASIL/B"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASIL/A"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ASIL/QM"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="gsn.ecore#//ValidityState">
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ValidityState/Invalid"/>
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ValidityState/Valid"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="gsn.ecore#//Status">
-      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//Status/Undetermined"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//Status/Unassigned"/>
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//Status/Revise"/>
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//Status/Recheck"/>
       <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//Status/Reuse"/>
@@ -33,7 +34,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//SafetyCase/strategies"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//SafetyCase/solutions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//SafetyCase/contexts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//SafetyCase/ASILLevels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//SafetyCase/justifications"/>
     </genClasses>
     <genClasses image="false" ecoreClass="gsn.ecore#//ArgumentElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//ArgumentElement/id"/>
@@ -61,6 +62,7 @@
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Goal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Goal/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Goal/asil"/>
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Strategy">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Strategy/state"/>
@@ -71,8 +73,8 @@
     <genClasses ecoreClass="gsn.ecore#//Context">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Context/state"/>
     </genClasses>
-    <genClasses ecoreClass="gsn.ecore#//ASIL">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//ASIL/level"/>
+    <genClasses ecoreClass="gsn.ecore#//Justification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Justification/state"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

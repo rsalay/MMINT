@@ -105,7 +105,7 @@ public interface ArgumentElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.
-	 * The default value is <code>"Undetermined"</code>.
+	 * The default value is <code>"Unassigned"</code>.
 	 * The literals are from the enumeration {@link edu.toronto.cs.se.nlsfung.gsn.Status}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -117,7 +117,7 @@ public interface ArgumentElement extends EObject {
 	 * @see edu.toronto.cs.se.nlsfung.gsn.Status
 	 * @see #setStatus(Status)
 	 * @see edu.toronto.cs.se.nlsfung.gsn.GSNPackage#getArgumentElement_Status()
-	 * @model default="Undetermined"
+	 * @model default="Unassigned"
 	 * @generated
 	 */
 	Status getStatus();

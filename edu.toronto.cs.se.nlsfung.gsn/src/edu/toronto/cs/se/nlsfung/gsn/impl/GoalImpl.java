@@ -2,6 +2,7 @@
  */
 package edu.toronto.cs.se.nlsfung.gsn.impl;
 
+import edu.toronto.cs.se.nlsfung.gsn.ASIL;
 import edu.toronto.cs.se.nlsfung.gsn.GSNPackage;
 import edu.toronto.cs.se.nlsfung.gsn.Goal;
 import edu.toronto.cs.se.nlsfung.gsn.TruthState;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.GoalImpl#getState <em>State</em>}</li>
+ *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.GoalImpl#getAsil <em>Asil</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +47,26 @@ public class GoalImpl extends DecomposableCoreElementImpl implements Goal {
 	 * @ordered
 	 */
 	protected TruthState state = STATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAsil() <em>Asil</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAsil()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ASIL ASIL_EDEFAULT = ASIL.UNASSIGNED;
+
+	/**
+	 * The cached value of the '{@link #getAsil() <em>Asil</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAsil()
+	 * @generated
+	 * @ordered
+	 */
+	protected ASIL asil = ASIL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +113,34 @@ public class GoalImpl extends DecomposableCoreElementImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ASIL getAsil() {
+		return asil;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAsil(ASIL newAsil) {
+		ASIL oldAsil = asil;
+		asil = newAsil == null ? ASIL_EDEFAULT : newAsil;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GSNPackage.GOAL__ASIL, oldAsil, asil));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GSNPackage.GOAL__STATE:
 				return getState();
+			case GSNPackage.GOAL__ASIL:
+				return getAsil();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +155,9 @@ public class GoalImpl extends DecomposableCoreElementImpl implements Goal {
 		switch (featureID) {
 			case GSNPackage.GOAL__STATE:
 				setState((TruthState)newValue);
+				return;
+			case GSNPackage.GOAL__ASIL:
+				setAsil((ASIL)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +174,9 @@ public class GoalImpl extends DecomposableCoreElementImpl implements Goal {
 			case GSNPackage.GOAL__STATE:
 				setState(STATE_EDEFAULT);
 				return;
+			case GSNPackage.GOAL__ASIL:
+				setAsil(ASIL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +191,8 @@ public class GoalImpl extends DecomposableCoreElementImpl implements Goal {
 		switch (featureID) {
 			case GSNPackage.GOAL__STATE:
 				return state != STATE_EDEFAULT;
+			case GSNPackage.GOAL__ASIL:
+				return asil != ASIL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +209,8 @@ public class GoalImpl extends DecomposableCoreElementImpl implements Goal {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (state: ");
 		result.append(state);
+		result.append(", asil: ");
+		result.append(asil);
 		result.append(')');
 		return result.toString();
 	}

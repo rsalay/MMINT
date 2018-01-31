@@ -13,6 +13,7 @@ package edu.toronto.cs.se.nlsfung.gsn;
  * </p>
  * <ul>
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.Goal#getState <em>State</em>}</li>
+ *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.Goal#getAsil <em>Asil</em>}</li>
  * </ul>
  *
  * @see edu.toronto.cs.se.nlsfung.gsn.GSNPackage#getGoal()
@@ -48,5 +49,34 @@ public interface Goal extends DecomposableCoreElement {
 	 * @generated
 	 */
 	void setState(TruthState value);
+
+	/**
+	 * Returns the value of the '<em><b>Asil</b></em>' attribute.
+	 * The literals are from the enumeration {@link edu.toronto.cs.se.nlsfung.gsn.ASIL}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Asil</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Asil</em>' attribute.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
+	 * @see #setAsil(ASIL)
+	 * @see edu.toronto.cs.se.nlsfung.gsn.GSNPackage#getGoal_Asil()
+	 * @model
+	 * @generated
+	 */
+	ASIL getAsil();
+
+	/**
+	 * Sets the value of the '{@link edu.toronto.cs.se.nlsfung.gsn.Goal#getAsil <em>Asil</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Asil</em>' attribute.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
+	 * @see #getAsil()
+	 * @generated
+	 */
+	void setAsil(ASIL value);
 
 } // Goal

@@ -98,7 +98,7 @@ public abstract class ArgumentElementImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Status STATUS_EDEFAULT = Status.UNDETERMINED;
+	protected static final Status STATUS_EDEFAULT = Status.UNASSIGNED;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.

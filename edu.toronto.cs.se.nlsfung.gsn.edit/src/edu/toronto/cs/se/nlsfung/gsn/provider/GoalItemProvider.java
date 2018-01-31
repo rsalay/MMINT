@@ -46,6 +46,7 @@ public class GoalItemProvider extends DecomposableCoreElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addStatePropertyDescriptor(object);
+			addAsilPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +65,28 @@ public class GoalItemProvider extends DecomposableCoreElementItemProvider {
 				 getString("_UI_Goal_state_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_state_feature", "_UI_Goal_type"),
 				 GSNPackage.Literals.GOAL__STATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Asil feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAsilPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Goal_asil_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_asil_feature", "_UI_Goal_type"),
+				 GSNPackage.Literals.GOAL__ASIL,
 				 true,
 				 false,
 				 false,
@@ -111,6 +134,7 @@ public class GoalItemProvider extends DecomposableCoreElementItemProvider {
 
 		switch (notification.getFeatureID(Goal.class)) {
 			case GSNPackage.GOAL__STATE:
+			case GSNPackage.GOAL__ASIL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

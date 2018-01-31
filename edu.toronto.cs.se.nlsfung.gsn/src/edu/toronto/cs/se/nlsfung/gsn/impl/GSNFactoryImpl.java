@@ -64,7 +64,7 @@ public class GSNFactoryImpl extends EFactoryImpl implements GSNFactory {
 			case GSNPackage.STRATEGY: return createStrategy();
 			case GSNPackage.SOLUTION: return createSolution();
 			case GSNPackage.CONTEXT: return createContext();
-			case GSNPackage.ASIL: return createASIL();
+			case GSNPackage.JUSTIFICATION: return createJustification();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,8 +80,8 @@ public class GSNFactoryImpl extends EFactoryImpl implements GSNFactory {
 		switch (eDataType.getClassifierID()) {
 			case GSNPackage.TRUTH_STATE:
 				return createTruthStateFromString(eDataType, initialValue);
-			case GSNPackage.ASIL_LEVEL:
-				return createASILLevelFromString(eDataType, initialValue);
+			case GSNPackage.ASIL:
+				return createASILFromString(eDataType, initialValue);
 			case GSNPackage.VALIDITY_STATE:
 				return createValidityStateFromString(eDataType, initialValue);
 			case GSNPackage.STATUS:
@@ -101,8 +101,8 @@ public class GSNFactoryImpl extends EFactoryImpl implements GSNFactory {
 		switch (eDataType.getClassifierID()) {
 			case GSNPackage.TRUTH_STATE:
 				return convertTruthStateToString(eDataType, instanceValue);
-			case GSNPackage.ASIL_LEVEL:
-				return convertASILLevelToString(eDataType, instanceValue);
+			case GSNPackage.ASIL:
+				return convertASILToString(eDataType, instanceValue);
 			case GSNPackage.VALIDITY_STATE:
 				return convertValidityStateToString(eDataType, instanceValue);
 			case GSNPackage.STATUS:
@@ -187,9 +187,9 @@ public class GSNFactoryImpl extends EFactoryImpl implements GSNFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ASIL createASIL() {
-		ASILImpl asil = new ASILImpl();
-		return asil;
+	public Justification createJustification() {
+		JustificationImpl justification = new JustificationImpl();
+		return justification;
 	}
 
 	/**
@@ -217,8 +217,8 @@ public class GSNFactoryImpl extends EFactoryImpl implements GSNFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ASILLevel createASILLevelFromString(EDataType eDataType, String initialValue) {
-		ASILLevel result = ASILLevel.get(initialValue);
+	public ASIL createASILFromString(EDataType eDataType, String initialValue) {
+		ASIL result = ASIL.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -228,7 +228,7 @@ public class GSNFactoryImpl extends EFactoryImpl implements GSNFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertASILLevelToString(EDataType eDataType, Object instanceValue) {
+	public String convertASILToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

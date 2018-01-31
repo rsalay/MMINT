@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getStrategies <em>Strategies</em>}</li>
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getSolutions <em>Solutions</em>}</li>
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getContexts <em>Contexts</em>}</li>
- *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getASILLevels <em>ASIL Levels</em>}</li>
+ *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getJustifications <em>Justifications</em>}</li>
  * </ul>
  *
  * @see edu.toronto.cs.se.nlsfung.gsn.GSNPackage#getSafetyCase()
@@ -92,19 +92,19 @@ public interface SafetyCase extends EObject {
 	EList<Context> getContexts();
 
 	/**
-	 * Returns the value of the '<em><b>ASIL Levels</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.toronto.cs.se.nlsfung.gsn.ASIL}.
+	 * Returns the value of the '<em><b>Justifications</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.toronto.cs.se.nlsfung.gsn.Justification}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>ASIL Levels</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Justifications</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ASIL Levels</em>' containment reference list.
-	 * @see edu.toronto.cs.se.nlsfung.gsn.GSNPackage#getSafetyCase_ASILLevels()
+	 * @return the value of the '<em>Justifications</em>' containment reference list.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.GSNPackage#getSafetyCase_Justifications()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ASIL> getASILLevels();
+	EList<Justification> getJustifications();
 
 } // SafetyCase

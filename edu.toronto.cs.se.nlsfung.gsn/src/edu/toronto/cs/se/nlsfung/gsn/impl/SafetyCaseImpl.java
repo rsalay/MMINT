@@ -2,10 +2,10 @@
  */
 package edu.toronto.cs.se.nlsfung.gsn.impl;
 
-import edu.toronto.cs.se.nlsfung.gsn.ASIL;
 import edu.toronto.cs.se.nlsfung.gsn.Context;
 import edu.toronto.cs.se.nlsfung.gsn.GSNPackage;
 import edu.toronto.cs.se.nlsfung.gsn.Goal;
+import edu.toronto.cs.se.nlsfung.gsn.Justification;
 import edu.toronto.cs.se.nlsfung.gsn.SafetyCase;
 import edu.toronto.cs.se.nlsfung.gsn.Solution;
 import edu.toronto.cs.se.nlsfung.gsn.Strategy;
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.SafetyCaseImpl#getStrategies <em>Strategies</em>}</li>
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.SafetyCaseImpl#getSolutions <em>Solutions</em>}</li>
  *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.SafetyCaseImpl#getContexts <em>Contexts</em>}</li>
- *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.SafetyCaseImpl#getASILLevels <em>ASIL Levels</em>}</li>
+ *   <li>{@link edu.toronto.cs.se.nlsfung.gsn.impl.SafetyCaseImpl#getJustifications <em>Justifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,14 +83,14 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 	protected EList<Context> contexts;
 
 	/**
-	 * The cached value of the '{@link #getASILLevels() <em>ASIL Levels</em>}' containment reference list.
+	 * The cached value of the '{@link #getJustifications() <em>Justifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getASILLevels()
+	 * @see #getJustifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ASIL> asilLevels;
+	protected EList<Justification> justifications;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,11 +164,11 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ASIL> getASILLevels() {
-		if (asilLevels == null) {
-			asilLevels = new EObjectContainmentEList<ASIL>(ASIL.class, this, GSNPackage.SAFETY_CASE__ASIL_LEVELS);
+	public EList<Justification> getJustifications() {
+		if (justifications == null) {
+			justifications = new EObjectContainmentEList<Justification>(Justification.class, this, GSNPackage.SAFETY_CASE__JUSTIFICATIONS);
 		}
-		return asilLevels;
+		return justifications;
 	}
 
 	/**
@@ -187,8 +187,8 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 				return ((InternalEList<?>)getSolutions()).basicRemove(otherEnd, msgs);
 			case GSNPackage.SAFETY_CASE__CONTEXTS:
 				return ((InternalEList<?>)getContexts()).basicRemove(otherEnd, msgs);
-			case GSNPackage.SAFETY_CASE__ASIL_LEVELS:
-				return ((InternalEList<?>)getASILLevels()).basicRemove(otherEnd, msgs);
+			case GSNPackage.SAFETY_CASE__JUSTIFICATIONS:
+				return ((InternalEList<?>)getJustifications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -209,8 +209,8 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 				return getSolutions();
 			case GSNPackage.SAFETY_CASE__CONTEXTS:
 				return getContexts();
-			case GSNPackage.SAFETY_CASE__ASIL_LEVELS:
-				return getASILLevels();
+			case GSNPackage.SAFETY_CASE__JUSTIFICATIONS:
+				return getJustifications();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,9 +240,9 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 				getContexts().clear();
 				getContexts().addAll((Collection<? extends Context>)newValue);
 				return;
-			case GSNPackage.SAFETY_CASE__ASIL_LEVELS:
-				getASILLevels().clear();
-				getASILLevels().addAll((Collection<? extends ASIL>)newValue);
+			case GSNPackage.SAFETY_CASE__JUSTIFICATIONS:
+				getJustifications().clear();
+				getJustifications().addAll((Collection<? extends Justification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -268,8 +268,8 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 			case GSNPackage.SAFETY_CASE__CONTEXTS:
 				getContexts().clear();
 				return;
-			case GSNPackage.SAFETY_CASE__ASIL_LEVELS:
-				getASILLevels().clear();
+			case GSNPackage.SAFETY_CASE__JUSTIFICATIONS:
+				getJustifications().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -291,8 +291,8 @@ public class SafetyCaseImpl extends MinimalEObjectImpl.Container implements Safe
 				return solutions != null && !solutions.isEmpty();
 			case GSNPackage.SAFETY_CASE__CONTEXTS:
 				return contexts != null && !contexts.isEmpty();
-			case GSNPackage.SAFETY_CASE__ASIL_LEVELS:
-				return asilLevels != null && !asilLevels.isEmpty();
+			case GSNPackage.SAFETY_CASE__JUSTIFICATIONS:
+				return justifications != null && !justifications.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

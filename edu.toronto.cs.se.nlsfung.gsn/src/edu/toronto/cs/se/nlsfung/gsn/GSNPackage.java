@@ -104,13 +104,13 @@ public interface GSNPackage extends EPackage {
 	int SAFETY_CASE__CONTEXTS = 3;
 
 	/**
-	 * The feature id for the '<em><b>ASIL Levels</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Justifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_CASE__ASIL_LEVELS = 4;
+	int SAFETY_CASE__JUSTIFICATIONS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Safety Case</em>' class.
@@ -606,13 +606,22 @@ public interface GSNPackage extends EPackage {
 	int GOAL__STATE = DECOMPOSABLE_CORE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Asil</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__ASIL = DECOMPOSABLE_CORE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Goal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_FEATURE_COUNT = DECOMPOSABLE_CORE_ELEMENT_FEATURE_COUNT + 1;
+	int GOAL_FEATURE_COUNT = DECOMPOSABLE_CORE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Goal</em>' class.
@@ -888,14 +897,14 @@ public interface GSNPackage extends EPackage {
 	int CONTEXT_OPERATION_COUNT = CONTEXTUAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link edu.toronto.cs.se.nlsfung.gsn.impl.ASILImpl <em>ASIL</em>}' class.
+	 * The meta object id for the '{@link edu.toronto.cs.se.nlsfung.gsn.impl.JustificationImpl <em>Justification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.toronto.cs.se.nlsfung.gsn.impl.ASILImpl
-	 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getASIL()
+	 * @see edu.toronto.cs.se.nlsfung.gsn.impl.JustificationImpl
+	 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getJustification()
 	 * @generated
 	 */
-	int ASIL = 11;
+	int JUSTIFICATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -904,7 +913,7 @@ public interface GSNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__ID = CONTEXT__ID;
+	int JUSTIFICATION__ID = CONTEXTUAL_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -913,7 +922,7 @@ public interface GSNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__NAME = CONTEXT__NAME;
+	int JUSTIFICATION__NAME = CONTEXTUAL_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -922,7 +931,7 @@ public interface GSNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__DESCRIPTION = CONTEXT__DESCRIPTION;
+	int JUSTIFICATION__DESCRIPTION = CONTEXTUAL_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -931,7 +940,7 @@ public interface GSNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__STATUS = CONTEXT__STATUS;
+	int JUSTIFICATION__STATUS = CONTEXTUAL_ELEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Context Of</b></em>' reference list.
@@ -940,7 +949,7 @@ public interface GSNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__CONTEXT_OF = CONTEXT__CONTEXT_OF;
+	int JUSTIFICATION__CONTEXT_OF = CONTEXTUAL_ELEMENT__CONTEXT_OF;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -949,34 +958,25 @@ public interface GSNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__STATE = CONTEXT__STATE;
+	int JUSTIFICATION__STATE = CONTEXTUAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The number of structural features of the '<em>Justification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL__LEVEL = CONTEXT_FEATURE_COUNT + 0;
+	int JUSTIFICATION_FEATURE_COUNT = CONTEXTUAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>ASIL</em>' class.
+	 * The number of operations of the '<em>Justification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASIL_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>ASIL</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIL_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 0;
+	int JUSTIFICATION_OPERATION_COUNT = CONTEXTUAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.toronto.cs.se.nlsfung.gsn.TruthState <em>Truth State</em>}' enum.
@@ -989,14 +989,14 @@ public interface GSNPackage extends EPackage {
 	int TRUTH_STATE = 12;
 
 	/**
-	 * The meta object id for the '{@link edu.toronto.cs.se.nlsfung.gsn.ASILLevel <em>ASIL Level</em>}' enum.
+	 * The meta object id for the '{@link edu.toronto.cs.se.nlsfung.gsn.ASIL <em>ASIL</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.toronto.cs.se.nlsfung.gsn.ASILLevel
-	 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getASILLevel()
+	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
+	 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getASIL()
 	 * @generated
 	 */
-	int ASIL_LEVEL = 13;
+	int ASIL = 13;
 
 	/**
 	 * The meta object id for the '{@link edu.toronto.cs.se.nlsfung.gsn.ValidityState <em>Validity State</em>}' enum.
@@ -1074,15 +1074,15 @@ public interface GSNPackage extends EPackage {
 	EReference getSafetyCase_Contexts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getASILLevels <em>ASIL Levels</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getJustifications <em>Justifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>ASIL Levels</em>'.
-	 * @see edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getASILLevels()
+	 * @return the meta object for the containment reference list '<em>Justifications</em>'.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.SafetyCase#getJustifications()
 	 * @see #getSafetyCase()
 	 * @generated
 	 */
-	EReference getSafetyCase_ASILLevels();
+	EReference getSafetyCase_Justifications();
 
 	/**
 	 * Returns the meta object for class '{@link edu.toronto.cs.se.nlsfung.gsn.ArgumentElement <em>Argument Element</em>}'.
@@ -1298,6 +1298,17 @@ public interface GSNPackage extends EPackage {
 	EAttribute getGoal_State();
 
 	/**
+	 * Returns the meta object for the attribute '{@link edu.toronto.cs.se.nlsfung.gsn.Goal#getAsil <em>Asil</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Asil</em>'.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.Goal#getAsil()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EAttribute getGoal_Asil();
+
+	/**
 	 * Returns the meta object for class '{@link edu.toronto.cs.se.nlsfung.gsn.Strategy <em>Strategy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1361,25 +1372,25 @@ public interface GSNPackage extends EPackage {
 	EAttribute getContext_State();
 
 	/**
-	 * Returns the meta object for class '{@link edu.toronto.cs.se.nlsfung.gsn.ASIL <em>ASIL</em>}'.
+	 * Returns the meta object for class '{@link edu.toronto.cs.se.nlsfung.gsn.Justification <em>Justification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ASIL</em>'.
-	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
+	 * @return the meta object for class '<em>Justification</em>'.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.Justification
 	 * @generated
 	 */
-	EClass getASIL();
+	EClass getJustification();
 
 	/**
-	 * Returns the meta object for the attribute '{@link edu.toronto.cs.se.nlsfung.gsn.ASIL#getLevel <em>Level</em>}'.
+	 * Returns the meta object for the attribute '{@link edu.toronto.cs.se.nlsfung.gsn.Justification#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL#getLevel()
-	 * @see #getASIL()
+	 * @return the meta object for the attribute '<em>State</em>'.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.Justification#getState()
+	 * @see #getJustification()
 	 * @generated
 	 */
-	EAttribute getASIL_Level();
+	EAttribute getJustification_State();
 
 	/**
 	 * Returns the meta object for enum '{@link edu.toronto.cs.se.nlsfung.gsn.TruthState <em>Truth State</em>}'.
@@ -1392,14 +1403,14 @@ public interface GSNPackage extends EPackage {
 	EEnum getTruthState();
 
 	/**
-	 * Returns the meta object for enum '{@link edu.toronto.cs.se.nlsfung.gsn.ASILLevel <em>ASIL Level</em>}'.
+	 * Returns the meta object for enum '{@link edu.toronto.cs.se.nlsfung.gsn.ASIL <em>ASIL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>ASIL Level</em>'.
-	 * @see edu.toronto.cs.se.nlsfung.gsn.ASILLevel
+	 * @return the meta object for enum '<em>ASIL</em>'.
+	 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
 	 * @generated
 	 */
-	EEnum getASILLevel();
+	EEnum getASIL();
 
 	/**
 	 * Returns the meta object for enum '{@link edu.toronto.cs.se.nlsfung.gsn.ValidityState <em>Validity State</em>}'.
@@ -1487,12 +1498,12 @@ public interface GSNPackage extends EPackage {
 		EReference SAFETY_CASE__CONTEXTS = eINSTANCE.getSafetyCase_Contexts();
 
 		/**
-		 * The meta object literal for the '<em><b>ASIL Levels</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Justifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SAFETY_CASE__ASIL_LEVELS = eINSTANCE.getSafetyCase_ASILLevels();
+		EReference SAFETY_CASE__JUSTIFICATIONS = eINSTANCE.getSafetyCase_Justifications();
 
 		/**
 		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.impl.ArgumentElementImpl <em>Argument Element</em>}' class.
@@ -1669,6 +1680,14 @@ public interface GSNPackage extends EPackage {
 		EAttribute GOAL__STATE = eINSTANCE.getGoal_State();
 
 		/**
+		 * The meta object literal for the '<em><b>Asil</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GOAL__ASIL = eINSTANCE.getGoal_Asil();
+
+		/**
 		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.impl.StrategyImpl <em>Strategy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1723,22 +1742,22 @@ public interface GSNPackage extends EPackage {
 		EAttribute CONTEXT__STATE = eINSTANCE.getContext_State();
 
 		/**
-		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.impl.ASILImpl <em>ASIL</em>}' class.
+		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.impl.JustificationImpl <em>Justification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.toronto.cs.se.nlsfung.gsn.impl.ASILImpl
-		 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getASIL()
+		 * @see edu.toronto.cs.se.nlsfung.gsn.impl.JustificationImpl
+		 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getJustification()
 		 * @generated
 		 */
-		EClass ASIL = eINSTANCE.getASIL();
+		EClass JUSTIFICATION = eINSTANCE.getJustification();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASIL__LEVEL = eINSTANCE.getASIL_Level();
+		EAttribute JUSTIFICATION__STATE = eINSTANCE.getJustification_State();
 
 		/**
 		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.TruthState <em>Truth State</em>}' enum.
@@ -1751,14 +1770,14 @@ public interface GSNPackage extends EPackage {
 		EEnum TRUTH_STATE = eINSTANCE.getTruthState();
 
 		/**
-		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.ASILLevel <em>ASIL Level</em>}' enum.
+		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.ASIL <em>ASIL</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.toronto.cs.se.nlsfung.gsn.ASILLevel
-		 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getASILLevel()
+		 * @see edu.toronto.cs.se.nlsfung.gsn.ASIL
+		 * @see edu.toronto.cs.se.nlsfung.gsn.impl.GSNPackageImpl#getASIL()
 		 * @generated
 		 */
-		EEnum ASIL_LEVEL = eINSTANCE.getASILLevel();
+		EEnum ASIL = eINSTANCE.getASIL();
 
 		/**
 		 * The meta object literal for the '{@link edu.toronto.cs.se.nlsfung.gsn.ValidityState <em>Validity State</em>}' enum.

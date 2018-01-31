@@ -2,7 +2,6 @@
  */
 package edu.toronto.cs.se.nlsfung.gsn.impl;
 
-import edu.toronto.cs.se.nlsfung.gsn.ASILLevel;
 import edu.toronto.cs.se.nlsfung.gsn.ArgumentElement;
 import edu.toronto.cs.se.nlsfung.gsn.Context;
 import edu.toronto.cs.se.nlsfung.gsn.ContextualElement;
@@ -12,6 +11,7 @@ import edu.toronto.cs.se.nlsfung.gsn.GSNFactory;
 import edu.toronto.cs.se.nlsfung.gsn.GSNPackage;
 import edu.toronto.cs.se.nlsfung.gsn.Goal;
 import edu.toronto.cs.se.nlsfung.gsn.InContextOf;
+import edu.toronto.cs.se.nlsfung.gsn.Justification;
 import edu.toronto.cs.se.nlsfung.gsn.SafetyCase;
 import edu.toronto.cs.se.nlsfung.gsn.Solution;
 import edu.toronto.cs.se.nlsfung.gsn.Status;
@@ -117,7 +117,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass asilEClass = null;
+	private EClass justificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,7 +131,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum asilLevelEEnum = null;
+	private EEnum asilEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +258,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSafetyCase_ASILLevels() {
+	public EReference getSafetyCase_Justifications() {
 		return (EReference)safetyCaseEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -447,6 +447,15 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGoal_Asil() {
+		return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStrategy() {
 		return strategyEClass;
 	}
@@ -501,8 +510,8 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getASIL() {
-		return asilEClass;
+	public EClass getJustification() {
+		return justificationEClass;
 	}
 
 	/**
@@ -510,8 +519,8 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getASIL_Level() {
-		return (EAttribute)asilEClass.getEStructuralFeatures().get(0);
+	public EAttribute getJustification_State() {
+		return (EAttribute)justificationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -528,8 +537,8 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getASILLevel() {
-		return asilLevelEEnum;
+	public EEnum getASIL() {
+		return asilEEnum;
 	}
 
 	/**
@@ -583,7 +592,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 		createEReference(safetyCaseEClass, SAFETY_CASE__STRATEGIES);
 		createEReference(safetyCaseEClass, SAFETY_CASE__SOLUTIONS);
 		createEReference(safetyCaseEClass, SAFETY_CASE__CONTEXTS);
-		createEReference(safetyCaseEClass, SAFETY_CASE__ASIL_LEVELS);
+		createEReference(safetyCaseEClass, SAFETY_CASE__JUSTIFICATIONS);
 
 		argumentElementEClass = createEClass(ARGUMENT_ELEMENT);
 		createEAttribute(argumentElementEClass, ARGUMENT_ELEMENT__ID);
@@ -611,6 +620,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 
 		goalEClass = createEClass(GOAL);
 		createEAttribute(goalEClass, GOAL__STATE);
+		createEAttribute(goalEClass, GOAL__ASIL);
 
 		strategyEClass = createEClass(STRATEGY);
 		createEAttribute(strategyEClass, STRATEGY__STATE);
@@ -621,12 +631,12 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 		contextEClass = createEClass(CONTEXT);
 		createEAttribute(contextEClass, CONTEXT__STATE);
 
-		asilEClass = createEClass(ASIL);
-		createEAttribute(asilEClass, ASIL__LEVEL);
+		justificationEClass = createEClass(JUSTIFICATION);
+		createEAttribute(justificationEClass, JUSTIFICATION__STATE);
 
 		// Create enums
 		truthStateEEnum = createEEnum(TRUTH_STATE);
-		asilLevelEEnum = createEEnum(ASIL_LEVEL);
+		asilEEnum = createEEnum(ASIL);
 		validityStateEEnum = createEEnum(VALIDITY_STATE);
 		statusEEnum = createEEnum(STATUS);
 	}
@@ -666,7 +676,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 		strategyEClass.getESuperTypes().add(this.getDecomposableCoreElement());
 		solutionEClass.getESuperTypes().add(this.getCoreElement());
 		contextEClass.getESuperTypes().add(this.getContextualElement());
-		asilEClass.getESuperTypes().add(this.getContext());
+		justificationEClass.getESuperTypes().add(this.getContextualElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(safetyCaseEClass, SafetyCase.class, "SafetyCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -674,13 +684,13 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 		initEReference(getSafetyCase_Strategies(), this.getStrategy(), null, "strategies", null, 0, -1, SafetyCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSafetyCase_Solutions(), this.getSolution(), null, "solutions", null, 0, -1, SafetyCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSafetyCase_Contexts(), this.getContext(), null, "contexts", null, 0, -1, SafetyCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSafetyCase_ASILLevels(), this.getASIL(), null, "ASILLevels", null, 0, -1, SafetyCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSafetyCase_Justifications(), this.getJustification(), null, "justifications", null, 0, -1, SafetyCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(argumentElementEClass, ArgumentElement.class, "ArgumentElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArgumentElement_Id(), ecorePackage.getEString(), "id", "", 1, 1, ArgumentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArgumentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ArgumentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArgumentElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, ArgumentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArgumentElement_Status(), this.getStatus(), "status", "Undetermined", 0, 1, ArgumentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArgumentElement_Status(), this.getStatus(), "status", "Unassigned", 0, 1, ArgumentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coreElementEClass, CoreElement.class, "CoreElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoreElement_Supports(), this.getSupportedBy(), this.getSupportedBy_Premise(), "supports", null, 0, -1, CoreElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -702,6 +712,7 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoal_State(), this.getTruthState(), "state", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGoal_Asil(), this.getASIL(), "asil", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStrategy_State(), this.getValidityState(), "state", null, 0, 1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -712,27 +723,28 @@ public class GSNPackageImpl extends EPackageImpl implements GSNPackage {
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContext_State(), this.getValidityState(), "state", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(asilEClass, edu.toronto.cs.se.nlsfung.gsn.ASIL.class, "ASIL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getASIL_Level(), this.getASILLevel(), "level", null, 0, 1, edu.toronto.cs.se.nlsfung.gsn.ASIL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(justificationEClass, Justification.class, "Justification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJustification_State(), this.getValidityState(), "state", null, 0, 1, Justification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(truthStateEEnum, TruthState.class, "TruthState");
 		addEEnumLiteral(truthStateEEnum, TruthState.FALSE);
 		addEEnumLiteral(truthStateEEnum, TruthState.TRUE);
 
-		initEEnum(asilLevelEEnum, ASILLevel.class, "ASILLevel");
-		addEEnumLiteral(asilLevelEEnum, ASILLevel.D);
-		addEEnumLiteral(asilLevelEEnum, ASILLevel.C);
-		addEEnumLiteral(asilLevelEEnum, ASILLevel.B);
-		addEEnumLiteral(asilLevelEEnum, ASILLevel.A);
-		addEEnumLiteral(asilLevelEEnum, ASILLevel.QM);
+		initEEnum(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.class, "ASIL");
+		addEEnumLiteral(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.UNASSIGNED);
+		addEEnumLiteral(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.D);
+		addEEnumLiteral(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.C);
+		addEEnumLiteral(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.B);
+		addEEnumLiteral(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.A);
+		addEEnumLiteral(asilEEnum, edu.toronto.cs.se.nlsfung.gsn.ASIL.QM);
 
 		initEEnum(validityStateEEnum, ValidityState.class, "ValidityState");
 		addEEnumLiteral(validityStateEEnum, ValidityState.INVALID);
 		addEEnumLiteral(validityStateEEnum, ValidityState.VALID);
 
 		initEEnum(statusEEnum, Status.class, "Status");
-		addEEnumLiteral(statusEEnum, Status.UNDETERMINED);
+		addEEnumLiteral(statusEEnum, Status.UNASSIGNED);
 		addEEnumLiteral(statusEEnum, Status.REVISE);
 		addEEnumLiteral(statusEEnum, Status.RECHECK);
 		addEEnumLiteral(statusEEnum, Status.REUSE);

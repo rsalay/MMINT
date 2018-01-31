@@ -233,26 +233,26 @@ public class GSNItemProviderAdapterFactory extends GSNAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.toronto.cs.se.nlsfung.gsn.ASIL} instances.
+	 * This keeps track of the one adapter used for all {@link edu.toronto.cs.se.nlsfung.gsn.Justification} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ASILItemProvider asilItemProvider;
+	protected JustificationItemProvider justificationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link edu.toronto.cs.se.nlsfung.gsn.ASIL}.
+	 * This creates an adapter for a {@link edu.toronto.cs.se.nlsfung.gsn.Justification}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createASILAdapter() {
-		if (asilItemProvider == null) {
-			asilItemProvider = new ASILItemProvider(this);
+	public Adapter createJustificationAdapter() {
+		if (justificationItemProvider == null) {
+			justificationItemProvider = new JustificationItemProvider(this);
 		}
 
-		return asilItemProvider;
+		return justificationItemProvider;
 	}
 
 	/**
@@ -361,7 +361,7 @@ public class GSNItemProviderAdapterFactory extends GSNAdapterFactory implements 
 		if (strategyItemProvider != null) strategyItemProvider.dispose();
 		if (solutionItemProvider != null) solutionItemProvider.dispose();
 		if (contextItemProvider != null) contextItemProvider.dispose();
-		if (asilItemProvider != null) asilItemProvider.dispose();
+		if (justificationItemProvider != null) justificationItemProvider.dispose();
 	}
 
 }

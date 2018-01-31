@@ -19,14 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Status implements Enumerator {
 	/**
-	 * The '<em><b>Undetermined</b></em>' literal object.
+	 * The '<em><b>Unassigned</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #UNDETERMINED_VALUE
+	 * @see #UNASSIGNED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	UNDETERMINED(0, "Undetermined", "Undetermined"),
+	UNASSIGNED(0, "Unassigned", "Unassigned"),
 
 	/**
 	 * The '<em><b>Revise</b></em>' literal object.
@@ -59,19 +59,19 @@ public enum Status implements Enumerator {
 	REUSE(3, "Reuse", "Reuse");
 
 	/**
-	 * The '<em><b>Undetermined</b></em>' literal value.
+	 * The '<em><b>Unassigned</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undetermined</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Unassigned</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UNDETERMINED
-	 * @model name="Undetermined"
+	 * @see #UNASSIGNED
+	 * @model name="Unassigned"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNDETERMINED_VALUE = 0;
+	public static final int UNASSIGNED_VALUE = 0;
 
 	/**
 	 * The '<em><b>Revise</b></em>' literal value.
@@ -126,7 +126,7 @@ public enum Status implements Enumerator {
 	 */
 	private static final Status[] VALUES_ARRAY =
 		new Status[] {
-			UNDETERMINED,
+			UNASSIGNED,
 			REVISE,
 			RECHECK,
 			REUSE,
@@ -186,7 +186,7 @@ public enum Status implements Enumerator {
 	 */
 	public static Status get(int value) {
 		switch (value) {
-			case UNDETERMINED_VALUE: return UNDETERMINED;
+			case UNASSIGNED_VALUE: return UNASSIGNED;
 			case REVISE_VALUE: return REVISE;
 			case RECHECK_VALUE: return RECHECK;
 			case REUSE_VALUE: return REUSE;
