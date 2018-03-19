@@ -12,7 +12,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Dependency" semanticCandidatesExpression="feature:dependencies" sourceMapping="//@ownedViewpoints[name='ClassDiagramViewpoint']/@ownedRepresentations[name='http%3A%2F%2Fse.cs.toronto.edu%2Fmodelepedia%2FRepresentation_ClassDiagram']/@defaultLayer/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='ClassDiagramViewpoint']/@ownedRepresentations[name='http%3A%2F%2Fse.cs.toronto.edu%2Fmodelepedia%2FRepresentation_ClassDiagram']/@defaultLayer/@containerMappings[name='Class']" targetFinderExpression="feature:depender" sourceFinderExpression="feature:dependee" domainClass="classdiagram.Dependency" useDomainElement="true">
+        <edgeMappings name="Dependency" semanticCandidatesExpression="feature:dependencies" sourceMapping="//@ownedViewpoints[name='ClassDiagramViewpoint']/@ownedRepresentations[name='http%3A%2F%2Fse.cs.toronto.edu%2Fmodelepedia%2FRepresentation_ClassDiagram']/@defaultLayer/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='ClassDiagramViewpoint']/@ownedRepresentations[name='http%3A%2F%2Fse.cs.toronto.edu%2Fmodelepedia%2FRepresentation_ClassDiagram']/@defaultLayer/@containerMappings[name='Class']" targetFinderExpression="feature:dependee" sourceFinderExpression="feature:depender" domainClass="classdiagram.Dependency" useDomainElement="true">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -126,8 +126,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="classdiagram.Dependency" referenceName="dependencies">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="dependee" valueExpression="var:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="depender" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="depender" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="dependee" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
